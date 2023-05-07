@@ -1,0 +1,2139 @@
+[
+    {
+        "id": "e6c5f5c1916e8897",
+        "type": "tab",
+        "label": "Pabrik",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "145caeab6e233005",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "9103fc7aa9f8f5ef",
+                "93c319ccc2cec93a",
+                "ccb0a9a9ec834b2a"
+            ]
+        ]
+    },
+    {
+        "id": "0ec3146e13b0aa3d",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/kandang/temperatur",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b76f4d4c2480f096",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "9103fc7aa9f8f5ef",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "temperatur kandang",
+        "low": "10",
+        "high": "30",
+        "inte": "true",
+        "property": "payload",
+        "x": 400,
+        "y": 60,
+        "wires": [
+            [
+                "0ec3146e13b0aa3d",
+                "b76f4d4c2480f096",
+                "1e7b5a6de81652fd"
+            ]
+        ]
+    },
+    {
+        "id": "93c319ccc2cec93a",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "kelembaban kandang",
+        "low": "30",
+        "high": "90",
+        "inte": "true",
+        "property": "payload",
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "ddaa6e80f9762b3a",
+                "3108ef76893db3d0",
+                "7a987099667ec17e"
+            ]
+        ]
+    },
+    {
+        "id": "ccb0a9a9ec834b2a",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "berat pakan",
+        "low": "0",
+        "high": "1000",
+        "inte": "true",
+        "property": "payload",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "5f06a6c038ccb4d5",
+                "5e0f8c6e8482600e",
+                "13b1490c1eee822d"
+            ]
+        ]
+    },
+    {
+        "id": "ddaa6e80f9762b3a",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/kandang/kelembaban",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 640,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5f06a6c038ccb4d5",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/kandang/pakan",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 620,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3108ef76893db3d0",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5e0f8c6e8482600e",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8e673c0b27c0a08d",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Smart farm",
+        "info": "",
+        "x": 140,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "2a14e563651ca33f",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "417b51b67c84a673",
+                "7fa690b6b38e6e2f",
+                "cec71ec2646e4bd7"
+            ]
+        ]
+    },
+    {
+        "id": "756e06de53367f3b",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/wagyu/berat",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 610,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1c521e94f6ab8e8a",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "417b51b67c84a673",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "berat",
+        "low": "100",
+        "high": "300",
+        "inte": "true",
+        "property": "payload",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "756e06de53367f3b",
+                "1c521e94f6ab8e8a",
+                "f211946f8fae73f9"
+            ]
+        ]
+    },
+    {
+        "id": "7fa690b6b38e6e2f",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "kualitas",
+        "low": "1",
+        "high": "5",
+        "inte": "true",
+        "property": "payload",
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "f187b4f7d0f6d9b4",
+                "053fb4a67a51ea20",
+                "3260583fef891102"
+            ]
+        ]
+    },
+    {
+        "id": "cec71ec2646e4bd7",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "kadar lemak",
+        "low": "10",
+        "high": "80",
+        "inte": "true",
+        "property": "payload",
+        "x": 370,
+        "y": 480,
+        "wires": [
+            [
+                "1f804b03b76d1239",
+                "c1de6b65101cf4bd",
+                "02e1f1821f3c2f85"
+            ]
+        ]
+    },
+    {
+        "id": "f187b4f7d0f6d9b4",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/wagyu/kualitas",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 620,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "1f804b03b76d1239",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/wagyu/lemak",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 610,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "053fb4a67a51ea20",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c1de6b65101cf4bd",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ce06072c7996ada5",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Daging merah (wagyu)",
+        "info": "",
+        "x": 180,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "a5909973b401bf28",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 660,
+        "wires": [
+            [
+                "68d576f114d72d32",
+                "5566ebd38e5e0f5e",
+                "6117b4123705ed4a"
+            ]
+        ]
+    },
+    {
+        "id": "4820879ac41ab01b",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/ikan/berat",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 600,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "a33d88a4c295f5ae",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "68d576f114d72d32",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "berat",
+        "low": "200",
+        "high": "400",
+        "inte": "true",
+        "property": "payload",
+        "x": 350,
+        "y": 580,
+        "wires": [
+            [
+                "4820879ac41ab01b",
+                "a33d88a4c295f5ae",
+                "c3f18608b71762ca"
+            ]
+        ]
+    },
+    {
+        "id": "5566ebd38e5e0f5e",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "kadar lemak",
+        "low": "50",
+        "high": "150",
+        "inte": "true",
+        "property": "payload",
+        "x": 370,
+        "y": 660,
+        "wires": [
+            [
+                "316ddab0f3a8428e",
+                "891f0fe8acfed6bd",
+                "118abc46a257fecd"
+            ]
+        ]
+    },
+    {
+        "id": "6117b4123705ed4a",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "panjang ikan",
+        "low": "20",
+        "high": "40",
+        "inte": "true",
+        "property": "payload",
+        "x": 370,
+        "y": 740,
+        "wires": [
+            [
+                "714f9704d733139d",
+                "3dee0d3e51371e5d",
+                "3ef8a2fbd9bd7492"
+            ]
+        ]
+    },
+    {
+        "id": "316ddab0f3a8428e",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/ikan/lemak",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 600,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "714f9704d733139d",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "farm/ikan/panjang",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 610,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "891f0fe8acfed6bd",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "3dee0d3e51371e5d",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "23108deb44841e33",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Daging Putih (ikan)",
+        "info": "",
+        "x": 170,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1e7b5a6de81652fd",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "5757f2e20a0e693e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperatur",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7a987099667ec17e",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "5757f2e20a0e693e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Kelembaban",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "13b1490c1eee822d",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "5757f2e20a0e693e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Berat pakan",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f211946f8fae73f9",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "39411aaf3876d02d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Berat",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "3260583fef891102",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "39411aaf3876d02d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Kualitas",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 740,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "02e1f1821f3c2f85",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "39411aaf3876d02d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Kadar lemak",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "c3f18608b71762ca",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "af5e8c9475aeed2c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Berat",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 730,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "118abc46a257fecd",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "af5e8c9475aeed2c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Kadar lemak",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "3ef8a2fbd9bd7492",
+        "type": "ui_text",
+        "z": "e6c5f5c1916e8897",
+        "group": "af5e8c9475aeed2c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Panjang ikan",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 750,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "e5eeda3dc9a7a682",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Susu Hewan dan Telur (kandang)",
+        "info": "",
+        "x": 150,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "80b220f35181ad18",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 930,
+        "y": 140,
+        "wires": [
+            [
+                "f64d2119978ab8d6",
+                "74ba01d4a82071fb",
+                "12e2140ee37ef542"
+            ]
+        ]
+    },
+    {
+        "id": "b21669dd649d3b4a",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/kosong/tepung",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1370,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b3029b054b351f9a",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f64d2119978ab8d6",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "tepung",
+        "low": "900",
+        "high": "1200",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 60,
+        "wires": [
+            [
+                "b21669dd649d3b4a",
+                "b3029b054b351f9a"
+            ]
+        ]
+    },
+    {
+        "id": "74ba01d4a82071fb",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "garam",
+        "low": "100",
+        "high": "200",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 140,
+        "wires": [
+            [
+                "16a95402efdbf6cf",
+                "f86dade070f74d0f"
+            ]
+        ]
+    },
+    {
+        "id": "12e2140ee37ef542",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "ragi",
+        "low": "600",
+        "high": "700",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 220,
+        "wires": [
+            [
+                "fb09766a9db4c76c",
+                "cc6752bd7ad357ab"
+            ]
+        ]
+    },
+    {
+        "id": "16a95402efdbf6cf",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/kosong/garam",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1370,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "fb09766a9db4c76c",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/kosong/ragi",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1360,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f86dade070f74d0f",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cc6752bd7ad357ab",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "45e6669a0c53243e",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Smart Plantation",
+        "info": "",
+        "x": 940,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3cc1c3f402a4b4fa",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 930,
+        "y": 400,
+        "wires": [
+            [
+                "40c0a8fbe975205d",
+                "79f5edcc2968a424",
+                "d8b5d9530d2d45fc"
+            ]
+        ]
+    },
+    {
+        "id": "b797e086588fff61",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/coklat/tepung",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1370,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c0750950bff7dada",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "40c0a8fbe975205d",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "tepung",
+        "low": "900",
+        "high": "1200",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 320,
+        "wires": [
+            [
+                "b797e086588fff61",
+                "c0750950bff7dada"
+            ]
+        ]
+    },
+    {
+        "id": "79f5edcc2968a424",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "coklat",
+        "low": "150",
+        "high": "250",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 400,
+        "wires": [
+            [
+                "3d71d133dc2e2bdd",
+                "3e8b47f124420bfa"
+            ]
+        ]
+    },
+    {
+        "id": "d8b5d9530d2d45fc",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "ragi",
+        "low": "600",
+        "high": "700",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 480,
+        "wires": [
+            [
+                "7b8165583c6e7f0d",
+                "33654a4580cfd96b"
+            ]
+        ]
+    },
+    {
+        "id": "3d71d133dc2e2bdd",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/coklat/coklat",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1360,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7b8165583c6e7f0d",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/coklat/ragi",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1360,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3e8b47f124420bfa",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "33654a4580cfd96b",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "72b11b3bc5de9e2a",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Sayur",
+        "info": "",
+        "x": 910,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "c2d7a23acdc0e54a",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 930,
+        "y": 660,
+        "wires": [
+            [
+                "a6bee6497112c06d",
+                "5e323a2c9e371258",
+                "4bbc22ebbb055ca3"
+            ]
+        ]
+    },
+    {
+        "id": "b42eea78ddafcf12",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/keju/tepung",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1360,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "599e6abc383c7c9b",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "a6bee6497112c06d",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "tepung",
+        "low": "900",
+        "high": "1200",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 580,
+        "wires": [
+            [
+                "b42eea78ddafcf12",
+                "599e6abc383c7c9b"
+            ]
+        ]
+    },
+    {
+        "id": "5e323a2c9e371258",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "keju",
+        "low": "150",
+        "high": "250",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 660,
+        "wires": [
+            [
+                "2b9520686b1125d2",
+                "75d5e82443ae8726"
+            ]
+        ]
+    },
+    {
+        "id": "4bbc22ebbb055ca3",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "ragi",
+        "low": "600",
+        "high": "700",
+        "inte": "true",
+        "property": "payload",
+        "x": 1130,
+        "y": 740,
+        "wires": [
+            [
+                "839e09aa643e61c6",
+                "0df6c667d30de9a3"
+            ]
+        ]
+    },
+    {
+        "id": "2b9520686b1125d2",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/keju/keju",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1350,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "839e09aa643e61c6",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/keju/ragi",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 1350,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "75d5e82443ae8726",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "0df6c667d30de9a3",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "1b8bab52fcb74bee",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Buah",
+        "info": "",
+        "x": 910,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "d619b252b45074c6",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Beras dan Gandum",
+        "info": "",
+        "x": 950,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4315f3a5f7577957",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2010,
+        "y": 140,
+        "wires": [
+            [
+                "fc61d8d500ec9848",
+                "b1f654c6cd48709d",
+                "89b90129614e947d"
+            ]
+        ]
+    },
+    {
+        "id": "6e258465789edf38",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/kosong/tepung",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2450,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4e279f13d18ece3f",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "fc61d8d500ec9848",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "panas",
+        "low": "900",
+        "high": "1200",
+        "inte": "true",
+        "property": "payload",
+        "x": 2210,
+        "y": 60,
+        "wires": [
+            [
+                "6e258465789edf38",
+                "4e279f13d18ece3f"
+            ]
+        ]
+    },
+    {
+        "id": "b1f654c6cd48709d",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "semi",
+        "low": "100",
+        "high": "200",
+        "inte": "true",
+        "property": "payload",
+        "x": 2210,
+        "y": 140,
+        "wires": [
+            [
+                "63758c776d999a65",
+                "be6751ea580599c1"
+            ]
+        ]
+    },
+    {
+        "id": "89b90129614e947d",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "dingin",
+        "low": "600",
+        "high": "700",
+        "inte": "true",
+        "property": "payload",
+        "x": 2210,
+        "y": 220,
+        "wires": [
+            [
+                "127dcbe4b638efd2",
+                "dae2e2126119cae4"
+            ]
+        ]
+    },
+    {
+        "id": "63758c776d999a65",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/kosong/garam",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2450,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "127dcbe4b638efd2",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/kosong/ragi",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2440,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "be6751ea580599c1",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "dae2e2126119cae4",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 21",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1547b099ef12a83b",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Smart restaurant",
+        "info": "",
+        "x": 2020,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "aa6cd234cb99cecb",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2010,
+        "y": 400,
+        "wires": [
+            [
+                "25f953765893ce60",
+                "d138be693fc36049",
+                "e1a3ad54a79f35e0"
+            ]
+        ]
+    },
+    {
+        "id": "e3a50fd553d5b18f",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/coklat/tepung",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2450,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "b6fc20075899d38f",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "25f953765893ce60",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "Makanan",
+        "low": "900",
+        "high": "1200",
+        "inte": "true",
+        "property": "payload",
+        "x": 2220,
+        "y": 320,
+        "wires": [
+            [
+                "e3a50fd553d5b18f",
+                "b6fc20075899d38f"
+            ]
+        ]
+    },
+    {
+        "id": "d138be693fc36049",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "Minuman",
+        "low": "150",
+        "high": "250",
+        "inte": "true",
+        "property": "payload",
+        "x": 2220,
+        "y": 400,
+        "wires": [
+            [
+                "cb2c2ad25f6b824d",
+                "9586d99da8e83c6f"
+            ]
+        ]
+    },
+    {
+        "id": "e1a3ad54a79f35e0",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "Service",
+        "low": "600",
+        "high": "700",
+        "inte": "true",
+        "property": "payload",
+        "x": 2220,
+        "y": 480,
+        "wires": [
+            [
+                "f5ae8541fa57ccb5",
+                "fa4e362858699e0a"
+            ]
+        ]
+    },
+    {
+        "id": "cb2c2ad25f6b824d",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/coklat/coklat",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2440,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f5ae8541fa57ccb5",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/coklat/ragi",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2440,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "9586d99da8e83c6f",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "fa4e362858699e0a",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4ead4dd8bb86f788",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Hasil Penjualan",
+        "info": "",
+        "x": 2020,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ebcc2143f3cd39cf",
+        "type": "inject",
+        "z": "e6c5f5c1916e8897",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 2010,
+        "y": 660,
+        "wires": [
+            [
+                "ec783319d74c6318",
+                "c3604d048a696671",
+                "c43ae7b197c283c8"
+            ]
+        ]
+    },
+    {
+        "id": "9ad42568f79dc2b7",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/keju/tepung",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2440,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "d12449f58d2e0569",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ec783319d74c6318",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "Anak-anak",
+        "low": "10",
+        "high": "100",
+        "inte": "true",
+        "property": "payload",
+        "x": 2230,
+        "y": 580,
+        "wires": [
+            [
+                "9ad42568f79dc2b7",
+                "d12449f58d2e0569"
+            ]
+        ]
+    },
+    {
+        "id": "c3604d048a696671",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "orang tua",
+        "low": "50",
+        "high": "250",
+        "inte": "true",
+        "property": "payload",
+        "x": 2220,
+        "y": 660,
+        "wires": [
+            [
+                "b58e57f8dc8cae3d",
+                "03763b0b7419c03f"
+            ]
+        ]
+    },
+    {
+        "id": "c43ae7b197c283c8",
+        "type": "random",
+        "z": "e6c5f5c1916e8897",
+        "name": "Pemuda",
+        "low": "0",
+        "high": "200",
+        "inte": "true",
+        "property": "payload",
+        "x": 2220,
+        "y": 740,
+        "wires": [
+            [
+                "ff9e02bc563ae145",
+                "d1891bc1560810d7"
+            ]
+        ]
+    },
+    {
+        "id": "b58e57f8dc8cae3d",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/keju/keju",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2430,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "ff9e02bc563ae145",
+        "type": "mqtt out",
+        "z": "e6c5f5c1916e8897",
+        "name": "",
+        "topic": "roti/keju/ragi",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "37cddf245b9e154d",
+        "x": 2430,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "03763b0b7419c03f",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "d1891bc1560810d7",
+        "type": "debug",
+        "z": "e6c5f5c1916e8897",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2420,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "8ed51c24fcbc4f1f",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Pengunjung restaurant",
+        "info": "",
+        "x": 2040,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "05addcf5b0091933",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Musim",
+        "info": "",
+        "x": 1990,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5177b3fa7c793308",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "kualitas A1-5",
+        "info": "",
+        "x": 370,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "df47b096810b188a",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "gram",
+        "info": "",
+        "x": 350,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "b6cdf56e295b771e",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "derajat celsius",
+        "info": "",
+        "x": 370,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "ccbe02eaa15265b2",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "gram",
+        "info": "",
+        "x": 350,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d9a07b5b3e3e48c8",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "Persentase (%)",
+        "info": "",
+        "x": 380,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "c99ab29e168787d6",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "gram",
+        "info": "",
+        "x": 350,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "a864fb8c94f703e0",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "gram",
+        "info": "",
+        "x": 350,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "79f665bb76da0f4d",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "gram",
+        "info": "",
+        "x": 350,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "5cd598ade9c16be2",
+        "type": "comment",
+        "z": "e6c5f5c1916e8897",
+        "name": "centimeter",
+        "info": "",
+        "x": 360,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "37cddf245b9e154d",
+        "type": "mqtt-broker",
+        "name": "sensorserver",
+        "broker": "127.0.0.1",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5757f2e20a0e693e",
+        "type": "ui_group",
+        "name": "Kandang",
+        "tab": "30a50c65f0d04553",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "39411aaf3876d02d",
+        "type": "ui_group",
+        "name": "Wagyu",
+        "tab": "30a50c65f0d04553",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "af5e8c9475aeed2c",
+        "type": "ui_group",
+        "name": "Ikan",
+        "tab": "30a50c65f0d04553",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "30a50c65f0d04553",
+        "type": "ui_tab",
+        "name": "Smart Farm",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
